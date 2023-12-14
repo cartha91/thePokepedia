@@ -1,7 +1,36 @@
+body {
+    font-size: 1em; /* Adjust the font size */
+    text-align: center;
+    background-color: #3b4cca;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: auto; /* Add a scrollbar if necessary */
+}
+
 .pokemon-sprite {
+    width: 100%; /* Adjust the size of the image */
     transition: all 0.3s ease-in-out;
 }
 
 .pokemon-sprite:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
+}
+
+input[type="text"], button {
+    font-size: 1em; /* Adjust the font size of the input and button */
+}
+
+#Pokemoninfo {
+    background-color: #ffffff;
+    color: #000000;
+    display: inline-block;
+    padding: 0.5em; /* Adjust the padding */
+    border-radius: 1em;
+    margin-top: 1em;
+    max-width: 90%; /* Prevent the info box from becoming too wide */
 }
