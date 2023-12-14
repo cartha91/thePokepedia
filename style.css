@@ -1,0 +1,7 @@
+.pokemon-sprite {
+    transition: all 0.3s ease-in-out;
+}
+
+.pokemon-sprite:hover {
+    transform: scale(1.5);
+}

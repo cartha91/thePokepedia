@@ -1,15 +1,39 @@
+document.getElementById('pokemonInput').addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        getPokemon();
+    }
+});
+
 function getPokemon() {
-    let pokemonName = document.getElementById('pokemonInput').value;
-    fetch('https://pokeapi.co/api/v2/pokemon/' + pokemonName)
+    let pokemonName = document.getElementById('pokemonInput').value.toLowerCase();
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
         .then(response => response.json())
         .then(data => {
-            let pokemonInfo = document.getElementById('pokemonInfo');
+            let pokemonInfo = document.getElementById('Pokemoninfo');
             pokemonInfo.innerHTML = `
                 <h2>${data.name}</h2>
-                <img src="${data.sprites.front_default}" alt="${data.name}">
-                <p>Height: ${data.height}</p>
-                <p>Weight: ${data.weight}</p>
+                <img src="${data.sprites.front_default}" alt="${data.name}" class="pokemon-sprite">
+                <p>Type: ${data.types.map(typeInfo => typeInfo.type.name).join(', ')}</p>
+                <p>Abilities: ${data.abilities.map(abilityInfo => abilityInfo.ability.name).join(', ')}</p>
+                <p>Stats:</p>
+                <ul>
+                    ${data.stats.map(stat => `<li>${stat.stat.name}: ${stat.base_stat}</li>`).join('')}
+                </ul>
             `;
+            fetch(data.species.url)
+                .then(response => response.json())
+                .then(speciesData => {
+                    if (speciesData.evolves_from_species) {
+                        pokemonInfo.innerHTML += `<p>Evolves from: ${speciesData.evolves_from_species.name}</p>`;
+                    }
+                    fetch(speciesData.habitat.url)
+                        .then(response => response.json())
+                        .then(habitatData => {
+                            pokemonInfo.innerHTML += `<p>Habitat: ${habitatData.name}</p>`;
+                        });
+                });
         })
-        .catch(error => console.error(error));
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }
