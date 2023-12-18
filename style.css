@@ -1,5 +1,5 @@
 body {
-    font-size: 1em; /* Adjust the font size */
+    font-size: 1em; 
     text-align: center;
     background-color: #3b4cca;
     color: #ffffff;
@@ -9,11 +9,15 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    overflow: auto; /* Add a scrollbar if necessary */
+    overflow: auto; 
+}
+
+#searchButton {
+    transition: background-color 0.3s ease; 
 }
 
 .pokemon-sprite {
-    width: 100%; /* Adjust the size of the image */
+    width: 100%; 
     transition: all 0.3s ease-in-out;
 }
 
@@ -22,15 +26,15 @@ body {
 }
 
 input[type="text"], button {
-    font-size: 1em; /* Adjust the font size of the input and button */
+    font-size: 1em; 
 }
 
 #Pokemoninfo {
     background-color: #ffffff;
     color: #000000;
     display: inline-block;
-    padding: 0.5em; /* Adjust the padding */
+    padding: 0.5em; 
     border-radius: 1em;
     margin-top: 1em;
-    max-width: 90%; /* Prevent the info box from becoming too wide */
+    max-width: 90%; 
 }
