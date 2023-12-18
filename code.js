@@ -6,6 +6,7 @@ document.getElementById('pokemonInput').addEventListener('keyup', function(event
 
 document.getElementById('pokemonInput').addEventListener('change', function() {
     let pokemonName = this.value.toLowerCase();
+    
     if (pokemonName) {
         getPokemon();
     } else {

@@ -1,7 +1,10 @@
 body {
     font-size: 1em; 
     text-align: center;
-    background-color: #3b4cca;
+    background-image: url('images/pokepediaBackdrop.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
     color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -29,7 +32,7 @@ input[type="text"], button {
     font-size: 1em; 
 }
 
-#Pokemoninfo {
+#pokemonContainer {
     background-color: #ffffff;
     color: #000000;
     display: inline-block;
@@ -37,4 +40,8 @@ input[type="text"], button {
     border-radius: 1em;
     margin-top: 1em;
     max-width: 90%; 
+}
+
+#Pokemoninfo {
+    max-width: 75%; 
 }
