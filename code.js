@@ -4,6 +4,22 @@ document.getElementById('pokemonInput').addEventListener('keyup', function(event
     }
 });
 
+document.getElementById('pokemonInput').addEventListener('change', function() {
+    let pokemonName = this.value.toLowerCase();
+    if (pokemonName) {
+        getPokemon();
+    } else {
+        alert('Please enter a Pokemon name.');
+    }
+});
+
+document.getElementById('searchButton').addEventListener('mouseover', function() {
+    this.style.backgroundColor = '#888'; 
+});
+document.getElementById('searchButton').addEventListener('mouseout', function() {
+    this.style.backgroundColor = ''; 
+});
+
 function getPokemon() {
     let pokemonName = document.getElementById('pokemonInput').value.toLowerCase();
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
