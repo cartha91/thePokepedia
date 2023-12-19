@@ -21,4 +21,24 @@ Pokepedia is a web app that allows users to search for their favorite Pokemon an
 3. Press enter or click the search button.
 4. View detailed information about the Pokemon.
 
+## Future Enhancements 🔮
 
+We're constantly working on adding more features to our Pokepedia app. Here's what you can expect in the future updates:
+
+- A feature to compare different Pokemon.
+- A Pokedex with a list of all Pokemon.
+- And much more...
+
+## Feedback 💌
+
+We'd love to hear your thoughts on Pokepedia! If you have any suggestions or feedback, feel free to send a messege here --example@gmail.com---
+
+
+
+## Acknowledgments 🙏
+
+- PokeAPI for providing the data used in this project.
+
+- designtrends.com for providing the background photo.
+
+Happy searching! 🎉
