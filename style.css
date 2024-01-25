@@ -1,5 +1,5 @@
 body {
-    font-size: 1em; 
+    font-size: 1.5em; 
     text-align: center;
     background-image: url('images/pokepediaBackdrop.jpg'); 
     background-size: cover; 
@@ -12,16 +12,18 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    overflow: auto; 
+    overflow: hidden; /* Prevent scrolling */
 }
 
 #searchButton {
     transition: background-color 0.3s ease; 
+    font-size: 1.2em; 
 }
 
 .pokemon-sprite {
-    width: 100%; 
+    width: 150%; 
     transition: all 0.3s ease-in-out;
+    margin: 0 auto; /* Center the sprite */
 }
 
 .pokemon-sprite:hover {
@@ -29,19 +31,28 @@ body {
 }
 
 input[type="text"], button {
-    font-size: 1em; 
+    font-size: 1.2em; 
 }
 
 #pokemonContainer {
     background-color: #ffffff;
     color: #000000;
-    display: inline-block;
-    padding: 0.5em; 
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 0.8em; /* Decrease the container padding */
     border-radius: 1em;
     margin-top: 1em;
     max-width: 90%; 
+    max-height: 70vh; /* Set a maximum height */
+    overflow-y: auto; /* Make it scrollable */
 }
 
 #Pokemoninfo {
     max-width: 75%; 
+    font-size: 1em; /* Decrease the info text size */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
